@@ -59,6 +59,11 @@ function RedisSentinelClient(options) {
   // note, sentinel daemon's conf needs to know this same password too/separately.
   masterOptions.auth_pass = options.master_auth_pass || masterOptions.auth_pass;
 
+  this.activeMasterClient = RedisSingleClient.createClient(9999, '127.0.0.1', masterOptions);
+  this.activeMasterClient.on('error', function(){
+    //swallow errors for this first connection. it is expected to fail
+  });
+
   this.reconnectSentinel()
   this.on('sentinel disconnected', this.reconnectSentinel.bind(this))
 
