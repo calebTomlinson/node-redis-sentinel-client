@@ -11,7 +11,7 @@
     "url": "https://github.com/DocuSignDev/node-redis-sentinel-client.git"
   },
   "dependencies": {
-    "redis": "git://github.com/calebTomlinson/node_redis.git#fb1cf47ed169dc00426222bb5548936517530af8",
+    "redis": "git://github.com/calebTomlinson/node_redis.git#a6901137ff7ad526ec02ceaa76a9bc98177171af",
     "debug": "~0.8.0"
   },
   "devDependencies": {
